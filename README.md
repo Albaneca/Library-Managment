@@ -3,7 +3,7 @@
 The project contains both API and MVC project 
 
 ## Homepage
-![Homepage](Library-Mangagment/tree/main/img/homepage.png)
+![Homepage](img/homepage.png)
 
 ## Installation
 
