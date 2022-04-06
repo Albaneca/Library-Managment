@@ -54,6 +54,8 @@ Administrative part:
 * Create/Update/Delete/View PublishHouse
 * Upload pictures on books/authors/publish houses using Cloudinary
 
+## 88 Tests covering more than 75% of the available services
+
 ## Built with:
 * ASP.NET Core
 * MsSQL Server
