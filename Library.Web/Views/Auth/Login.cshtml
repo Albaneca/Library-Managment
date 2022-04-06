@@ -1,0 +1,86 @@
+﻿@model RequestAuthDTO
+@{
+    ViewData["Title"] = "Login";
+}
+<section class="login_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="detail-box">
+                    <h3>
+                        GET BOOKS FOR FREE
+                    </h3>
+                    <p>
+                        Create your free account now and get immediate access to 100s of
+                        books
+                    </p>
+                    <a style="margin-left:10px;" asp-controller="Auth" asp-action="Register">Register</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="login_form">
+                    <h5>
+                        Login Now
+                    </h5>
+                    <form asp-action="Login" asp-controller="Auth">
+                        <div>
+                            <input asp-for="Email" placeholder="Your Email">
+                            <span asp-validation-for="Email" class="form-error"></span>
+                        </div>
+                        <div>
+                            <input asp-for="Password" type="password" placeholder="Password">
+                            <span asp-validation-for="Password" class="form-error"></span>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+                    <div class="detail-box">
+                        <a style="margin-left:10px;" href="javascript:ForgotPass();">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function ForgotPass() {
+        Swal.fire({
+            title: '<h4 class="swal-title"> Your email address </h4>',
+
+            input: 'text',
+            width: 400,
+            backdrop: false,
+            customClass: 'swal-wide',
+            showCloseButton: true,
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            confirmButtonText: 'Send',
+            showLoaderOnConfirm: true,
+            preConfirm: (login) => {
+                return fetch(`/Auth/ForgotPassword?email=${login}`)
+                    .then(response => {
+
+                        if (!response.ok) {
+                            Swal.showValidationMessage(
+                                'Wrong Email'
+                            )
+                        }
+
+                    })
+                    .catch(error => {
+                        Swal.showValidationMessage(
+                            'Something went wrong!'
+                        )
+                    })
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        })
+
+    }
+</script>
+@section Scripts{
+<partial name="_ValidationScriptsPartial" />
+}

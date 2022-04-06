@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DisplayBookDTO>
+@{
+	ViewData["Title"] = "Books";
+	 Layout = "_AdminLayout";
+}
+<section class="ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<br/>
+					<a asp-action = "Create" asp-controller = "Book" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">
+						Add new book</a>
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>ID</th>
+					        <th>Title</th>
+					        <th>Actions</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+							@foreach(var item in Model)
+							{
+								<tr>
+								  <th scope="row" class="scope" >@item.Id</th>
+								  <td>@item.Title</td>
+								  <td>
+									  <a asp-action = "Details" asp-route-id="@item.Id" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Details</a>
+									  <a asp-action = "Edit" asp-route-id = "@item.Id" asp-controller = "Book" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Edit</a>
+									  <a asp-action = "Delete" asp-route-id = "@item.Id" asp-controller = "Book" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Delete</a>
+								  </td>
+								</tr>
+							}
+					    </tbody>
+					  </table>
+					  <div>
+						<ul class="pagination">
+						    @for (var i = 1; i <= (int)ViewData["TotalPages"] + 1; i++)
+						    {
+						        <li class="page-item @(i == (int)ViewData["CurrentPage"]? "active" : "")">
+						            <a asp-route-currentpage="@i" class="page-link">@i</a>
+						        </li>
+						    }
+						</ul>
+					 </div>
+					 </div>
+				</div>
+			</div>
+		</div>
+</section>

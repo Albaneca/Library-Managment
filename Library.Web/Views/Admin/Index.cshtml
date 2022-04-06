@@ -1,0 +1,55 @@
+﻿@model StatisticsViewModel
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Admin panel";
+}
+
+<body>
+    <!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="side_img">
+      <img src="images/side-img.png" alt="" />
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img_container">
+            <div class="img-box b1">
+              <img src="images/a-1.jpg" alt="" />
+            </div>
+            <div class="img-box b2">
+              <img src="images/a-2.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h3>
+                About Our Library
+              </h3>
+                <div class="row text-center mt-4">
+                  <div class="col p-2">
+                   <h4 class="mb-1 line-height-5">@Model.BooksCount</h4>
+                    <small class="mb-0 font-weight-bold">Books</small>
+                   </div>
+                   <div class="col p-2">
+                      <h4 class="mb-1 line-height-5">@Model.AuthorsCount</h4>
+                     <small class="mb-0 font-weight-bold">Authors</small>
+                    </div>
+                    <div class="col p-2">
+                      <h4 class="mb-1 line-height-5">@Model.UsersCount</h4>
+                     <small class="mb-0 font-weight-bold">Users</small>
+                    </div>
+                    <div class="col p-2">
+                      <h4 class="mb-1 line-height-5">@Model.LoansCount</h4>
+                     <small class="mb-0 font-weight-bold">Requests</small>
+                    </div>
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>

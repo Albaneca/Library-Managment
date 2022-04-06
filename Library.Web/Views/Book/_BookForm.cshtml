@@ -1,0 +1,76 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = @ViewData["Action"];
+}
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <form asp-controller="Book" asp-action="@ViewData["Action"]" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <label asp-for="Title" class="form-label" style="color:black">Title:</label>
+                        <input asp-for="Title" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <label asp-for="Description" class="input_message" style="color:black">Description:</label>
+                        <input asp-for="Description" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <label asp-for="Year" class="form-label" style="color:black">Year:</label>
+                        <input asp-for="Year" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <label asp-for="AuthorId" class="form-label" style="color:black">Authors:</label>
+                        <select asp-for="AuthorId" asp-items="Model.Authors" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <label asp-for="PublishHouseId" class="form-label" style="color:black">Category:</label>
+                        <select asp-for="PublishHouseId" asp-items="Model.PublishHouses" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-lg-3 col-form-label form-control-label">Book image</label>
+                    <input type ="file" asp-for="ProfilePicture" class="form-control" accept="image/*">
+                </div>
+                <br/>
+                <div>
+                    <input type="submit" value="@ViewData["Action"]" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit" />
+                    <a asp-action="Index" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Back</a>
+                </div>
+            </form>
+        </div>
+        @if (ViewData["Action"] == "Create")
+        {
+            <div class="column">
+                <img src="https://res.cloudinary.com/denfz6l1q/image/upload/v1644718347/booksPictures/leather-book-preview_gyrmg9.png">
+            </div>
+        }
+        else
+        {
+            <div class="column">
+                <img src="@Model.URL">
+            </div>
+        }
+    </div>
+
+</div>
+<style>
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>

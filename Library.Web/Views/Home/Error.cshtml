@@ -1,0 +1,39 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = $"Error";
+}
+    <!-- Start Error-Area Area  -->
+<div class="error-area ptb--200 ptb_sm--60 ptb_md--80">
+    <div class="container">
+        <div class="row align-item-center">
+            <div class="col-lg-12">
+                <div class="error-inner" style="position: relative;">
+
+                    <div class="bar"></div>
+                    @if (Model.StatusCode == 404)
+                    {
+                        <iframe class="frame" src='https://my.spline.design/untitled-99fed29f21328c7af40385354131e0dc/' frameborder='0' style="width: 100%; height:400px;"></iframe>
+                    }
+                    else if (Model.StatusCode == 401)
+                    {
+                        <iframe class="frame" src='https://my.spline.design/untitled-017995076ba40093dd46b8caf1e710c5/' frameborder='0' style="width: 100%; height:400px;"></iframe>
+                    }
+                    else
+                    {
+                        <iframe class="frame" src='https://my.spline.design/untitled-f1c867cf26eda545ce29a7ec6fb2a495/' frameborder='0' style="width: 100%; height:400px;"></iframe>
+
+                    }
+
+                </div>
+                <div class="error-inner">
+
+                    <h2 class="title">Something’s not right.</h2>
+                    @*<p class="description"> //Uncomment if you want to see full exception
+                        @Model.Message
+                    </p>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

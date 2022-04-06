@@ -1,0 +1,86 @@
+﻿@model List<DisplayLoanDTO>
+@{
+	ViewData["Title"] = "Loans";
+	Layout = "_AdminLayout";
+}
+
+<section class="ftco-section">
+		<div class="container">
+			<div>
+				<form asp-action="GetAll" method="get">
+				<div class="form-actions no-color">
+					<p>
+						<a asp-action = "NotConfirmed">Awaiting loans</a> |
+					    <a asp-action="GetAll">Back to Full List</a>
+					</p>
+				</div>
+				</form>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>ID</th>
+					        <th>BookName</th>
+					        <th>DueTime</th>
+					        <th>Status</th>
+					        <th>Requester Name</th>
+					        <th>Approver Name</th>
+							<th>Actions</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+							@foreach(var item in Model)
+							{
+								<tr>
+								  <th scope="row" class="scope" >@item.Id</th>
+								  <td>@item.BookName</td>
+								  <td>@item.DueDate</td>
+								  <td>@item.Status</td>
+								  <td>@item.RequesterName</td>
+								  <td>@item.ApproverName</td>
+								  <td>
+								  @if(item.Status == GlobalConstants.LOAN_NOT_CONFIRMED)
+									{
+								       <a asp-action = "Decide" asp-route-answerString = "true" asp-route-id="@item.Id" class="btn"><i class="fa fa-check"></i></a>
+											<a asp-action = "Decide" asp-route-id="@item.Id" class="btn"><i class="fa fa-close"></i></a>
+										}
+									</td>
+								</tr>
+							}
+					    </tbody>
+					  </table>
+					  <div>
+						<ul class="pagination">
+						    @for (var i = 1; i <= (int)ViewData["TotalPages"] + 1; i++)
+						    {
+						        <li class="page-item @(i == (int)ViewData["CurrentPage"]? "active" : "")">
+						            <a asp-route-currentpage="@i" class="page-link">@i</a>
+						        </li>
+						    }
+						</ul>
+					 </div>
+					 </div>
+				</div>
+			</div>
+		</div>
+</section>
+
+<style>
+	 /* Style buttons */
+.btn {
+  background-color: DodgerBlue; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+} 
+</style>

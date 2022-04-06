@@ -1,0 +1,48 @@
+﻿@using Library.Services.DTOs.AuthorDTOs
+@model DisplayAuthorDTO
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_AdminLayout";
+}
+<div class="container">
+    <div class="row">
+        <div class="column">
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <p class="form-label" style="color:black">ID: @Model.Id</p>
+                    </div>
+                </div>
+                <div class = "row">
+                                        <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <p class="form-label" style="color:black">Name: @Model.Name</p>
+                    </div>
+                </div>
+                <br/>
+                <div class = "row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <p class="form-label" style="color:black">Total books: @Model.BooksCount</p>
+                    </div>
+                </div>
+                <div>
+                <a asp-action="Index" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Back</a>
+                </div>
+        </div>
+        <div class="column">
+            <img src="@Model.URL">
+        </div>
+    </div>
+</div>
+<style>
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>

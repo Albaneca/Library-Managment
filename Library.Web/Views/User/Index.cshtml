@@ -1,0 +1,70 @@
+﻿@model IEnumerable<UserDTO>
+@{
+	ViewData["Title"] = "Users";
+	 Layout = "_AdminLayout";
+}
+<section class="ftco-section">
+		<div class="container">
+			<div>
+				<form asp-action="Index" method="get">
+				<div class="form-actions no-color">
+					<p>
+					    Find by part: <input type="text" name="Part" placeholder=" Search"/>
+					    <input type="submit" value="Search" class="btn btn-default" /> |
+					    <a asp-action="Index">Back to Full List</a>
+					</p>
+				</div>
+				</form>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>ID</th>
+					        <th>Username</th>
+					        <th>Email</th>
+					        <th>Role</th>
+							<th>Banned</th>
+					        <th>Actions</th>
+					      </tr>
+					    </thead>
+					    <tbody>
+							@foreach(var item in Model)
+							{
+								<tr>
+								  <th scope="row" class="scope" >@item.Id</th>
+								  <td>@item.Username</td>
+								  <td>@item.Email</td>
+								  <td>@item.Role</td>
+								  <td>@item.IsBlocked</td>
+								  <td><a asp-action = "Details" asp-route-id="@item.Id" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Details</a>
+								  @if(@item.IsBlocked == false)
+								  {
+									  <a asp-action = "BanForm" asp-controller = "Ban" asp-route-id="@item.Id" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Ban</a>
+								  }
+								  else
+								  {
+								  	<a asp-action = "Unban" asp-controller = "Ban" asp-route-id="@item.Id" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Unban</a>
+								  }
+								  </td>
+								</tr>
+							}
+					    </tbody>
+					  </table>
+					  <div>
+						<ul class="pagination">
+						    @for (var i = 1; i <= (int)ViewData["TotalPages"] + 1; i++)
+						    {
+						        <li class="page-item @(i == (int)ViewData["CurrentPage"]? "active" : "")">
+						            <a asp-route-currentpage="@i" class="page-link">@i</a>
+						        </li>
+						    }
+						</ul>
+					 </div>
+					 </div>
+				</div>
+			</div>
+		</div>
+</section>

@@ -1,0 +1,70 @@
+﻿@model DisplayBookDTO
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="container">
+    <div class="row">
+        <div class="column">
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <p class="form-label" style="color:black">Title: @Model.Title</p>
+                    </div>
+                </div>
+                <div class = "row">
+                                        <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <p class="form-label" style="color:black">Year: @Model.Year</p>
+                    </div>
+                </div>
+                <div class = "row">
+                                        <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <a asp-controller = "Author" asp-action = "GetById" asp-route-id = "@Model.AuthorId" class="form-label" style="color:black">Author: @Model.AuthorsName</a>
+                    </div>
+                </div>
+                <br/>
+                <div class = "row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <a asp-controller = "PublishHouse" asp-action = "GetById" asp-route-id = "@Model.PublishHouseId" class="form-label" style="color:black">Publisher: @Model.PublishHouseName</a>
+                    </div>
+                </div>
+                <br/>
+                <div class = "row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <p class="form-label" style="color:black">Description: @Model.Description</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6 col-lg-6 col-xl-6 tm-col-email">
+                        <p class="form-label" style="color:black">Total Loans: @Model.TotalLoans</p>
+                    </div>
+                </div>
+                <div>
+                @if(@Model.IsLoaned == true)
+                {
+                    <p style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Book unavalable</p>
+                }
+                else
+                {
+                    <a asp-controller = "Loan" asp-action = "RequestLoan" asp-route-id="@Model.Id" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Put loan request</a>
+                }
+                <a asp-action="Index" style="color:snow; font-weight:600" class="btn btn-primary tm-btn-submit">Back</a>
+                </div>
+        </div>
+        <div class="column">
+            <img src="@Model.URL">
+        </div>
+    </div>
+</div>
+<style>
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
