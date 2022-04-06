@@ -30,7 +30,7 @@ The project contains both API and MVC project
 8. Run the project locally (CTRL + F5) and enjoy using it on [the following address](https://localhost:5001/). :)    
 ## Database relations
 
-![Database-relations](img/db.jpg)
+![Database-relations](img/db.png)
 
 ```
 ## Main functionality
