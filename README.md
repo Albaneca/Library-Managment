@@ -1,5 +1,5 @@
 # 🧾 Project Description 
-**Library Managment** is a web application that serves as online library where you can browse across multiple books, authors and publish house as well as book a loan for an available book.
+**Library Managment** is a web application that serves as online library where you can browse across multiple books, authors and publish house in addition request a loan for an available book.
 The project contains both API and MVC project 
 
 ## Homepage
