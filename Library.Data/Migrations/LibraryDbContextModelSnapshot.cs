@@ -93,7 +93,7 @@ namespace Library.Data.Migrations
                             IsDeleted = false,
                             ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Христо Ботев",
-                            URL = ""
+                            URL = "https://res.cloudinary.com/denfz6l1q/image/upload/v1639012542/profilePictures/oymjlgd6v2yi9dm3pynn.jpg"
                         },
                         new
                         {
@@ -102,7 +102,7 @@ namespace Library.Data.Migrations
                             IsDeleted = false,
                             ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Иван Вазов",
-                            URL = ""
+                            URL = "https://res.cloudinary.com/denfz6l1q/image/upload/v1639012542/profilePictures/oymjlgd6v2yi9dm3pynn.jpg"
                         });
                 });
 
@@ -205,7 +205,7 @@ namespace Library.Data.Migrations
                             ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PublishHouseId = 1L,
                             Title = "Хубава си, Татковино! Стихотворения",
-                            URL = "",
+                            URL = "https://res.cloudinary.com/denfz6l1q/image/upload/v1644718347/booksPictures/leather-book-preview_gyrmg9.png",
                             Year = new DateTime(2019, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -219,7 +219,7 @@ namespace Library.Data.Migrations
                             ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             PublishHouseId = 2L,
                             Title = "Под игото",
-                            URL = "",
+                            URL = "https://res.cloudinary.com/denfz6l1q/image/upload/v1644718347/booksPictures/leather-book-preview_gyrmg9.png",
                             Year = new DateTime(2017, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -311,11 +311,11 @@ namespace Library.Data.Migrations
                         {
                             Id = 1L,
                             BookId = 1L,
-                            CreatedOn = new DateTime(2022, 1, 21, 15, 12, 12, 160, DateTimeKind.Local).AddTicks(9124),
+                            CreatedOn = new DateTime(2022, 7, 11, 17, 14, 35, 783, DateTimeKind.Local).AddTicks(8284),
                             IsDeleted = false,
                             ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             RequesterId = 1L,
-                            Status = "Waiting for approval"
+                            Status = "Waiting"
                         });
                 });
 
@@ -359,7 +359,7 @@ namespace Library.Data.Migrations
                             IsDeleted = false,
                             ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Art House",
-                            URL = ""
+                            URL = "https://res.cloudinary.com/denfz6l1q/image/upload/v1645362793/publishHousePictures/Random_House_logo_bw2-1024x819_ptore3.jpg"
                         },
                         new
                         {
@@ -368,7 +368,7 @@ namespace Library.Data.Migrations
                             IsDeleted = false,
                             ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Пан",
-                            URL = ""
+                            URL = "https://res.cloudinary.com/denfz6l1q/image/upload/v1645362793/publishHousePictures/Random_House_logo_bw2-1024x819_ptore3.jpg"
                         });
                 });
 
@@ -448,15 +448,15 @@ namespace Library.Data.Migrations
                         new
                         {
                             Id = 1L,
-                            ApplicationRoleId = 2L,
-                            CreatedOn = new DateTime(2022, 1, 21, 15, 12, 11, 944, DateTimeKind.Local).AddTicks(7289),
+                            ApplicationRoleId = 1L,
+                            CreatedOn = new DateTime(2022, 7, 11, 17, 14, 35, 633, DateTimeKind.Local).AddTicks(7258),
                             Email = "anjelo98@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Anjelo",
                             IsDeleted = false,
                             LastName = "Jotov",
                             ModifiedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Password = "$2a$11$BMh.2wQgIKT.2IjIFGlQiu7XZRs1FfUiesEbHOT.Xj53QKJQyA/Py",
+                            Password = "$2a$11$mgCNQGQc9nWxjho6i2OtVeghsz9B3awYgvDWed5PAqrkzyuEZIOgS",
                             PhoneNumber = "0882712687",
                             ProfilePictureURL = "https://res.cloudinary.com/denfz6l1q/image/upload/v1639012542/profilePictures/oymjlgd6v2yi9dm3pynn.jpg",
                             Username = "Albaneca"
