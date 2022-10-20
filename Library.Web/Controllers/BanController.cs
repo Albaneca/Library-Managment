@@ -1,7 +1,6 @@
 ﻿using Library.Common;
 using Library.Services.Contracts;
 using Library.Services.DTOs;
-using Library.Web.Extensions;
 using Library.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
