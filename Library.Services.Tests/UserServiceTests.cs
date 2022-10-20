@@ -30,6 +30,7 @@ namespace Library.Services.Tests
         public async Task FilterUsersAsync()
         {
             await context.AddRangeAsync(DataInitializer.Users);
+            await context.AddRangeAsync(DataInitializer.ApplicationRoles);
             await context.AddRangeAsync(DataInitializer.Bans);
 
             await context.SaveChangesAsync();
